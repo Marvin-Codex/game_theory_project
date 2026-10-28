@@ -1,0 +1,8 @@
+Scenario,Type,Dominant strategy,Pure Nash -> payoffs,Mixed equilibrium,delta*
+Base case,Prisoner's Dilemma,Cut (both),"(Cut, Cut) -> (75, 75)",none,0.444
+"Cost rises to 3,800",Coordination game,none,"(Keep, Keep) -> (60, 60); (Cut, Cut) -> (35, 35)","Shop A Keep 73%, Cut 27%; Shop B Keep 73%, Cut 27% -> (50.40, 50.40)",-
+"Cost rises to 4,300",Dominant-strategy equilibrium,Keep (both),"(Keep, Keep) -> (35, 35)",none,-
+"Smaller discount (cut to 4,800)",Prisoner's Dilemma,Cut (both),"(Cut, Cut) -> (90, 90)",none,0.815
+"Deeper discount (cut to 4,000)",Coordination game,none,"(Keep, Keep) -> (100, 100); (Cut, Cut) -> (50, 50)","Shop A Keep 33%, Cut 67%; Shop B Keep 33%, Cut 67% -> (60.00, 60.00)",-
+Customers react weakly (60%),Dominant-strategy equilibrium,Keep (both),"(Keep, Keep) -> (100, 100)",none,-
+Customers react strongly (95%),Prisoner's Dilemma,Cut (both),"(Cut, Cut) -> (75, 75)",none,0.630

@@ -80,7 +80,41 @@ class GameTheoryCLI:
         print("CREATE CUSTOM GAME")
         print("-"*60)
         try:
-            self.current_game = game_from_user()
+            name = input("Game name (default: Custom Game): ").strip() or "Custom Game"
+            p1 = input("Player 1 name (rows, default: Player 1): ").strip() or "Player 1"
+            p2 = input("Player 2 name (columns, default: Player 2): ").strip() or "Player 2"
+            if p2 == p1:
+                p2 = f"{p2} (2)"
+            
+            n_rows = int(input(f"Number of strategies for {p1}: ").strip() or "2")
+            rows = []
+            for i in range(n_rows):
+                s = input(f"  Strategy {i+1} for {p1}: ").strip() or f"S{i+1}"
+                rows.append(s)
+            
+            n_cols = int(input(f"Number of strategies for {p2}: ").strip() or "2")
+            cols = []
+            for i in range(n_cols):
+                s = input(f"  Strategy {i+1} for {p2}: ").strip() or f"S{i+1}"
+                cols.append(s)
+            
+            print(f"\nEnter payoffs as (payoff to {p1}, payoff to {p2}) for each cell:")
+            cells = []
+            for i in range(n_rows):
+                row_cells = []
+                for j in range(n_cols):
+                    while True:
+                        try:
+                            p1_pay = float(input(f"  ({rows[i]}, {cols[j]}) - {p1}'s payoff: ").strip())
+                            p2_pay = float(input(f"  ({rows[i]}, {cols[j]}) - {p2}'s payoff: ").strip())
+                            row_cells.append((p1_pay, p2_pay))
+                            break
+                        except ValueError:
+                            print("    Invalid number, try again.")
+                cells.append(row_cells)
+            
+            from src.game import TwoPlayerGame
+            self.current_game = TwoPlayerGame.from_cells(name, [p1, p2], rows, cols, cells)
             print("\n✓ Game created successfully!")
             self.current_game.display()
         except Exception as e:

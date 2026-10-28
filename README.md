@@ -180,7 +180,7 @@ pip install -r requirements.txt
 The easiest way to use all features through an interactive menu:
 
 ```bash
-# Run the main application
+# Run the main CLI application
 python main.py
 ```
 
@@ -198,7 +198,53 @@ The menu provides:
 11. Run Full Analysis on Current Game
 0. Exit
 
-### Option 2: Run Individual Module Demonstrations
+### Option 2: Graphical User Interface (GUI)
+
+For a more user-friendly visual experience with buttons, tabs, and plots:
+
+```bash
+# Run the GUI application
+python gui.py
+```
+
+The GUI provides:
+- Menu-driven access to all analysis features
+- Interactive game loading and creation
+- Tabbed interface for game view and analysis results
+- Built-in visualizations with matplotlib integration
+- Scenario analysis tables
+- Export games to JSON and load them back
+- Generate all figures with one click
+
+### Option 3: Run Individual Module Demonstrations
+
+Each module has a `__main__` block that demonstrates its functionality:
+
+```bash
+# Game representation
+python -m src.game
+
+# Best response analysis
+python -m src.analysis
+
+# Dominance and pure Nash equilibria
+python -m src.equilibrium
+
+# Mixed strategy Nash equilibria
+python -m src.mixed
+
+# Sequential games (game trees)
+python -m src.gametree
+
+# Repeated games
+python -m src.repeated
+
+# Scenario analysis with CSV export
+python -m src.scenarios
+
+# Generate all visualizations
+python -m src.visualize
+```
 
 Each module has a `__main__` block that demonstrates its functionality:
 

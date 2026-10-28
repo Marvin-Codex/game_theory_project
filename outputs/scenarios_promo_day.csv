@@ -1,0 +1,6 @@
+Scenario,Type,Dominant strategy,Pure Nash -> payoffs,Mixed equilibrium,delta*
+Base case,Anti-coordination game,none,"(Tue, Thu) -> (80, 50); (Thu, Tue) -> (50, 80)","Shop A Tue 75%, Thu 25%; Shop B Tue 75%, Thu 25% -> (42.50, 42.50)",-
+Tuesday much busier,Anti-coordination game,none,"(Tue, Thu) -> (120, 50); (Thu, Tue) -> (50, 120)","Shop A Tue 95%, Thu 5%; Shop B Tue 95%, Thu 5% -> (48.57, 48.57)",-
+Tuesday advantage vanishes,Anti-coordination game,none,"(Tue, Thu) -> (60, 60); (Thu, Tue) -> (60, 60)","Shop A Tue 50%, Thu 50%; Shop B Tue 50%, Thu 50% -> (42.50, 42.50)",-
+Heavy clash penalty,Anti-coordination game,none,"(Tue, Thu) -> (80, 50); (Thu, Tue) -> (50, 80)","Shop A Tue 64%, Thu 36%; Shop B Tue 64%, Thu 36% -> (35.45, 35.45)",-
+Light clash penalty,Dominant-strategy equilibrium,Tue (both),"(Tue, Tue) -> (55, 55)",none,-
